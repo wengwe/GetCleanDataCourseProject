@@ -1,0 +1,47 @@
+Codebook
+========
+Variable list and descriptions
+------------------------------
+
+Variable name     | Description
+------------------|------------
+Subject.ID        | ID the subject who performed the activity for each window sample. Its range is from 1 to 30.
+Activity          | Activity name
+featureGatherType | Feature: Time domain signal or frequency domain signal (Time or Freq)
+featureInstrument | Feature: Measuring instrument (Accelerometer or Gyroscope)
+accelarationSignal| Feature: Acceleration signal (Body or Gravity)
+featureValueType  | Feature: Variable (Mean or SD)
+isJerkSignal      | Feature: Jerk signal
+isEuclideanNorm   | Feature: Is feature Magnitude of the signals calculated using the Euclidean norm
+featureAxis       | Feature: 3-axial signals in the X, Y and Z directions (X, Y, or Z)
+featAverage       | Feature: Average of each variable for each activity and each subject
+
+Dataset structure
+-----------------
+
+```{r}
+data.root <- "C:/Dev/Src/Coursera_DataScience/Getting_Clearning_Data/course_project/GetCleanDataCourseProject/UCI HAR Dataset"
+dfTidy <- read.table(file.path(data.root, "output.txt"), header = TRUE)
+str(dfTidy)
+```
+
+List the key variables in the data table
+----------------------------------------
+
+```{r}
+colnames(dfTidy)
+```
+
+Show a few rows of the dataset
+------------------------------
+
+```{r}
+head(dfTidy)
+```
+
+Summary of variables
+--------------------
+
+```{r}
+summary(dfTidy)
+```
